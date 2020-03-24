@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		013BF196242A4DF5001E0C83 /* QRContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013BF195242A4DF5001E0C83 /* QRContentView.swift */; };
+		013BF199242A5993001E0C83 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 013BF198242A5993001E0C83 /* CodeScanner */; };
 		01C8B9182423AF3600C1504E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C8B9172423AF3600C1504E /* AppDelegate.swift */; };
 		01C8B91A2423AF3600C1504E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C8B9192423AF3600C1504E /* SceneDelegate.swift */; };
 		01C8B91C2423AF3600C1504E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C8B91B2423AF3600C1504E /* ContentView.swift */; };
@@ -35,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		013BF195242A4DF5001E0C83 /* QRContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRContentView.swift; sourceTree = "<group>"; };
 		01C8B9142423AF3600C1504E /* QRReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01C8B9172423AF3600C1504E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01C8B9192423AF3600C1504E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				013BF199242A5993001E0C83 /* CodeScanner in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +106,7 @@
 				01C8B9172423AF3600C1504E /* AppDelegate.swift */,
 				01C8B9192423AF3600C1504E /* SceneDelegate.swift */,
 				01C8B91B2423AF3600C1504E /* ContentView.swift */,
+				013BF195242A4DF5001E0C83 /* QRContentView.swift */,
 				01C8B91D2423AF3700C1504E /* Assets.xcassets */,
 				01C8B9222423AF3700C1504E /* LaunchScreen.storyboard */,
 				01C8B9252423AF3700C1504E /* Info.plist */,
@@ -152,6 +157,9 @@
 			dependencies = (
 			);
 			name = QRReader;
+			packageProductDependencies = (
+				013BF198242A5993001E0C83 /* CodeScanner */,
+			);
 			productName = QRReader;
 			productReference = 01C8B9142423AF3600C1504E /* QRReader.app */;
 			productType = "com.apple.product-type.application";
@@ -224,6 +232,9 @@
 				Base,
 			);
 			mainGroup = 01C8B90B2423AF3500C1504E;
+			packageReferences = (
+				013BF197242A5993001E0C83 /* XCRemoteSwiftPackageReference "CodeScanner" */,
+			);
 			productRefGroup = 01C8B9152423AF3600C1504E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -270,6 +281,7 @@
 				01C8B9182423AF3600C1504E /* AppDelegate.swift in Sources */,
 				01C8B91A2423AF3600C1504E /* SceneDelegate.swift in Sources */,
 				01C8B91C2423AF3600C1504E /* ContentView.swift in Sources */,
+				013BF196242A4DF5001E0C83 /* QRContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,6 +606,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		013BF197242A5993001E0C83 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		013BF198242A5993001E0C83 /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 013BF197242A5993001E0C83 /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 01C8B90C2423AF3500C1504E /* Project object */;
 }

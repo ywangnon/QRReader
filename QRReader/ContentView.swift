@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import CodeScanner
 
 struct QRItem: Identifiable {
     var id = UUID()
@@ -21,35 +22,48 @@ var listData: [QRItem] = [
 ]
 
 struct ContentView: View {
+    @State private var isShowingScanner = false
+    
+    func handleScan(result: Result<String, CodeScannerView.ScanError>) {
+       self.isShowingScanner = false
+       switch result {
+       case .success(let code):
+        print("Scanning Success", code)
+       case .failure(let error):
+        print("Scanning failed", error)
+       }
+    }
+    
     var body: some View {
         ZStack(alignment: .bottom) {
             NavigationView {
-                List(listData) { item in
-                    HStack {
-                        Image(systemName: item.imageName)
-                        Text(item.contents)
+                NavigationLink(destination: QRContentView()) {
+                    List(listData) { item in
+                        HStack {
+                            Image(systemName: item.imageName)
+                            Text(item.contents)
+                        }
                     }
                 }
                 .navigationBarTitle(Text("QR Reader"))
             }
             Button(action: {
-                // action
+                self.isShowingScanner = true
             }) {
-                Text("QR")
-                .fontWeight(.bold)
-                .font(.title)
-                .padding()
-                .background(Color.purple)
-                .cornerRadius(40)
-                .foregroundColor(.white)
-                .padding(10)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 40)
-                        .stroke(Color.purple, lineWidth: 5)
-                )
+                Image(systemName: "camera.viewfinder")
+                    .resizable()
+                    .frame(width: 48, height: 48, alignment: .center)
+                    .background(Color.white)
+                    .cornerRadius(8)
+                    .padding()
             }
             .padding()
             .shadow(color: .red, radius: 5)
+            .sheet(isPresented: $isShowingScanner) {
+                CodeScannerView(codeTypes: [.qr],
+                                simulatedData: "Paul Hudson\npaul@hackingwithswift.com",
+                                completion: self.handleScan(result:))
+            }
         }
     }
 }
