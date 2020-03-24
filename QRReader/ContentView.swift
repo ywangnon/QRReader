@@ -33,11 +33,23 @@ struct ContentView: View {
                 .navigationBarTitle(Text("QR Reader"))
             }
             Button(action: {
-                // contents
+                // action
             }) {
                 Text("QR")
+                .fontWeight(.bold)
+                .font(.title)
+                .padding()
+                .background(Color.purple)
+                .cornerRadius(40)
+                .foregroundColor(.white)
+                .padding(10)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 40)
+                        .stroke(Color.purple, lineWidth: 5)
+                )
             }
-            .border(Color.black)
+            .padding()
+            .shadow(color: .red, radius: 5)
         }
     }
 }
