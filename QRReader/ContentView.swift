@@ -68,6 +68,12 @@ struct ContentView: View {
     }
 }
 
+extension ContentView {
+    fileprivate func getAllDatas() {
+        
+    }
+}
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
