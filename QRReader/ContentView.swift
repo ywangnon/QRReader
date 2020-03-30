@@ -17,21 +17,20 @@ struct ContentView: View {
     @State private var isShowingScanner = false
     
     func handleScan(result: Result<String, CodeScannerView.ScanError>) {
-       self.isShowingScanner = false
-       switch result {
-       case .success(let code):
-        print("Scanning Success", code)
-        let qrCode = QRCodes(context: self.context)
-        qrCode.content = code
-        qrCode.date = Date()
-        do {
-            try self.context.save()
-        } catch {
-            print(error)
+        self.isShowingScanner = false
+        switch result {
+        case .success(let code):
+            let qrCode = QRCodes(context: self.context)
+            qrCode.content = code
+            qrCode.date = Date()
+            do {
+                try self.context.save()
+            } catch {
+                print(error)
+            }
+        case .failure(let error):
+            print("Scanning failed", error)
         }
-       case .failure(let error):
-        print("Scanning failed", error)
-       }
     }
     
     var body: some View {
