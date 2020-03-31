@@ -36,19 +36,19 @@ struct ContentView: View {
     var body: some View {
         ZStack(alignment: .bottom) {
             NavigationView {
-                NavigationLink(destination: QRContentView()) {
-                    List {
-                        ForEach(self.qrCodes) { code in
+                List {
+                    ForEach(self.qrCodes) { code in
+                        NavigationLink(destination: QRContentView(qrContent: code.content!)) {
                             Text("code: \(code.content!)")
-                        }.onDelete { (indexSet) in
-                            let deleteItem = self.qrCodes[indexSet.first!]
-                            self.context.delete(deleteItem)
-                            
-                            do {
-                                try self.context.save()
-                            } catch {
-                                print(error)
-                            }
+                        }
+                    }.onDelete { (indexSet) in
+                        let deleteItem = self.qrCodes[indexSet.first!]
+                        self.context.delete(deleteItem)
+                        
+                        do {
+                            try self.context.save()
+                        } catch {
+                            print(error)
                         }
                     }
                 }

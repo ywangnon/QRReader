@@ -9,6 +9,7 @@
 import Foundation
 import CoreData
 
+@objc(QRCodes)
 public class QRCodes: NSManagedObject, Identifiable {
     @NSManaged public var date: Date?
     @NSManaged public var content: String?
@@ -18,7 +19,7 @@ extension QRCodes {
     static func getAllQRCodes() -> NSFetchRequest<QRCodes> {
         let request: NSFetchRequest<QRCodes> = NSFetchRequest<QRCodes>(entityName: "QRCodes") // QRCodes.fetchRequest() as! NSFetchRequest<QRCodes>
         
-        let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
+        let sortDescriptor = NSSortDescriptor(key: "date", ascending: false)
         
         request.sortDescriptors = [sortDescriptor]
         
