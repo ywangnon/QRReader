@@ -17,7 +17,7 @@ public class QRCodes: NSManagedObject, Identifiable {
 
 extension QRCodes {
     static func getAllQRCodes() -> NSFetchRequest<QRCodes> {
-        let request: NSFetchRequest<QRCodes> = NSFetchRequest<QRCodes>(entityName: "QRCodes") // QRCodes.fetchRequest() as! NSFetchRequest<QRCodes>
+        let request: NSFetchRequest<QRCodes> = NSFetchRequest<QRCodes>(entityName: "QRCodes")
         
         let sortDescriptor = NSSortDescriptor(key: "date", ascending: false)
         
@@ -25,4 +25,6 @@ extension QRCodes {
         
         return request
     }
+    
+    
 }
