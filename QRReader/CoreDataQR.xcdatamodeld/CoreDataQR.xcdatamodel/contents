@@ -3,8 +3,9 @@
     <entity name="QRCodes" representedClassName="QRCodes" syncable="YES">
         <attribute name="content" optional="YES" attributeType="String"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="isRead" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
     </entity>
     <elements>
-        <element name="QRCodes" positionX="-63" positionY="-18" width="128" height="73"/>
+        <element name="QRCodes" positionX="-63" positionY="-18" width="128" height="88"/>
     </elements>
 </model>

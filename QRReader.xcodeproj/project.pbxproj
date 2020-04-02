@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		010ECABB243602100003F329 /* CreateQRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010ECABA243602100003F329 /* CreateQRCodeView.swift */; };
 		013BF196242A4DF5001E0C83 /* QRContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013BF195242A4DF5001E0C83 /* QRContentView.swift */; };
 		013BF199242A5993001E0C83 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 013BF198242A5993001E0C83 /* CodeScanner */; };
 		01655956242F09C600AF57ED /* CoreDataQR.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 01655954242F09C600AF57ED /* CoreDataQR.xcdatamodeld */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		010ECABA243602100003F329 /* CreateQRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateQRCodeView.swift; sourceTree = "<group>"; };
 		013BF195242A4DF5001E0C83 /* QRContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRContentView.swift; sourceTree = "<group>"; };
 		01655955242F09C600AF57ED /* CoreDataQR.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataQR.xcdatamodel; sourceTree = "<group>"; };
 		01655957242F0A2500AF57ED /* QRItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRItem.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				01C8B9172423AF3600C1504E /* AppDelegate.swift */,
 				01C8B9192423AF3600C1504E /* SceneDelegate.swift */,
 				01C8B91B2423AF3600C1504E /* ContentView.swift */,
+				010ECABA243602100003F329 /* CreateQRCodeView.swift */,
 				013BF195242A4DF5001E0C83 /* QRContentView.swift */,
 				01C8B91D2423AF3700C1504E /* Assets.xcassets */,
 				01C8B9222423AF3700C1504E /* LaunchScreen.storyboard */,
@@ -305,6 +308,7 @@
 				01655956242F09C600AF57ED /* CoreDataQR.xcdatamodeld in Sources */,
 				01C8B91C2423AF3600C1504E /* ContentView.swift in Sources */,
 				013BF196242A4DF5001E0C83 /* QRContentView.swift in Sources */,
+				010ECABB243602100003F329 /* CreateQRCodeView.swift in Sources */,
 				01655958242F0A2500AF57ED /* QRItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -479,6 +483,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.YooHansub.QRReader.QRReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -499,6 +504,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.YooHansub.QRReader.QRReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

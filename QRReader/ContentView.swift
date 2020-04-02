@@ -15,6 +15,7 @@ struct ContentView: View {
     @FetchRequest(fetchRequest: QRCodes.getAllQRCodes()) var qrCodes: FetchedResults<QRCodes>
     
     @State private var isShowingScanner = false
+    @State private var isAddingQR = false
     
     init() {
         // To remove only extra separators below the list:
@@ -31,6 +32,8 @@ struct ContentView: View {
             let qrCode = QRCodes(context: self.context)
             qrCode.content = code
             qrCode.date = Date()
+            qrCode.isRead = true
+            
             do {
                 try self.context.save()
             } catch {
@@ -51,7 +54,7 @@ struct ContentView: View {
                                 qrContent: code.content!,
                                 date: self.converDateToString(code.date!, .detailView))) {
                                     HStack {
-                                        Image(systemName: "qrcode.viewfinder")
+                                        Image(systemName: code.isRead ? "qrcode.viewfinder" : "pencil.and.outline")
                                         VStack(alignment: .leading) {
                                             Text("\(code.content!)")
                                                 .font(.subheadline)
@@ -72,7 +75,20 @@ struct ContentView: View {
                         }
                     }
                 }
-                .navigationBarTitle(Text("큐알 리더기!!!"))
+                .navigationBarItems(trailing:
+                    Button(action: {
+                        self.isAddingQR.toggle()
+                    }) {
+                        Image(systemName: "plus.square")
+                            .resizable()
+                            .padding()
+                    }.sheet(isPresented: $isAddingQR, onDismiss: {
+                        print("Code executed when the sheet dismisses")
+                    }) {
+                        CreateQRCodeView().environment(\.managedObjectContext, self.context)
+                    }
+                )
+                    .navigationBarTitle(Text("큐알 리더기!!!"))
             }
             Button(action: {
                 self.isShowingScanner = true
@@ -88,8 +104,8 @@ struct ContentView: View {
             .shadow(color: .red, radius: 5)
             .sheet(isPresented: $isShowingScanner) {
                 CodeScannerView(codeTypes: [.qr],
-                                simulatedData: "Paul Hudson\npaul@hackingwithswift.com",
-                                completion: self.handleScan(result:))
+                                simulatedData: "https://www.google.co.kr",
+                    completion: self.handleScan(result:))
             }
         }
     }
@@ -104,7 +120,6 @@ extension ContentView {
     func converDateToString(_ date: Date, _ format: CustomDateFormat) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = format.rawValue
-        //        formatter.dateFormat = .none
         return formatter.string(from: date)
     }
 }

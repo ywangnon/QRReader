@@ -11,8 +11,9 @@ import CoreData
 
 @objc(QRCodes)
 public class QRCodes: NSManagedObject, Identifiable {
-    @NSManaged public var date: Date?
     @NSManaged public var content: String?
+    @NSManaged public var date: Date?
+    @NSManaged public var isRead: Bool
 }
 
 extension QRCodes {
@@ -22,7 +23,6 @@ extension QRCodes {
         let sortDescriptor = NSSortDescriptor(key: "date", ascending: false)
         
         request.sortDescriptors = [sortDescriptor]
-        
         return request
     }
     
