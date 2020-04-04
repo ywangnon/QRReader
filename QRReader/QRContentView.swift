@@ -8,17 +8,41 @@
 
 import SwiftUI
 import SafariServices
+import CoreImage.CIFilterBuiltins
 
 struct QRContentView: View {
     var qrContent: String
     var date: String
     
+    let context = CIContext()
+    let filter = CIFilter.qrCodeGenerator()
+    
     @State var showSafari = false
     
     var body: some View {
         Form {
+            Text("QR 코드")
+                .font(.headline)
+            
+            HStack {
+                Image(uiImage: generateQRCode(from: "\(qrContent)"))
+                    .interpolation(.none)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 200, height: 200, alignment: .center)
+                Spacer()
+                Button(action: {
+                    UIPasteboard.general.image = self.generateQRCode(from: "\(self.qrContent)")
+                }) {
+                    Image(systemName: "doc.on.doc.fill")
+                }
+                .background(Color.blue)
+                .shadow(color: .red, radius: 5)
+            }
+                
             Text("QR 내용")
                 .font(.headline)
+            
             HStack {
                 Button(action: {
                     self.showSafari = true
@@ -60,6 +84,19 @@ extension QRContentView {
             return searchURL!
         }
         return URL(string: "http://www.google.com")!
+    }
+    
+    func generateQRCode(from string: String) -> UIImage {
+        let data = Data(string.utf8)
+        filter.setValue(data, forKey: "inputMessage")
+
+        if let outputImage = filter.outputImage {
+            if let cgimg = context.createCGImage(outputImage, from: outputImage.extent) {
+                return UIImage(cgImage: cgimg)
+            }
+        }
+
+        return UIImage(systemName: "xmark.circle") ?? UIImage()
     }
 }
 
