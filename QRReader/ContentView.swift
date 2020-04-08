@@ -25,6 +25,8 @@ struct ContentView: View {
         UITableView.appearance().separatorStyle = .singleLine
     }
     
+    /// 스캐너 결과 데이터 다루기
+    /// - Parameter result: 스캔 결과값
     func handleScan(result: Result<String, CodeScannerView.ScanError>) {
         self.isShowingScanner = false
         switch result {
