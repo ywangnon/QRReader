@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		010D99E624619D6E00DF85B3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 010D99E824619D6E00DF85B3 /* Localizable.strings */; };
+		010D99ED2461A02500DF85B3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 010D99EF2461A02500DF85B3 /* InfoPlist.strings */; };
 		010ECABB243602100003F329 /* CreateQRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010ECABA243602100003F329 /* CreateQRCodeView.swift */; };
 		013BF196242A4DF5001E0C83 /* QRContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013BF195242A4DF5001E0C83 /* QRContentView.swift */; };
 		013BF199242A5993001E0C83 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 013BF198242A5993001E0C83 /* CodeScanner */; };
@@ -40,6 +42,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		010D99E724619D6E00DF85B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		010D99E924619DC000DF85B3 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		010D99EA24619DC000DF85B3 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		010D99EE2461A02500DF85B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		010D99F02461A02900DF85B3 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		010ECABA243602100003F329 /* CreateQRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateQRCodeView.swift; sourceTree = "<group>"; };
 		013BF195242A4DF5001E0C83 /* QRContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRContentView.swift; sourceTree = "<group>"; };
 		01655955242F09C600AF57ED /* CoreDataQR.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataQR.xcdatamodel; sourceTree = "<group>"; };
@@ -86,6 +93,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		010D99E124619C7D00DF85B3 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				01C8B91B2423AF3600C1504E /* ContentView.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		010D99E224619C8B00DF85B3 /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				013BF195242A4DF5001E0C83 /* QRContentView.swift */,
+			);
+			path = DetailView;
+			sourceTree = "<group>";
+		};
+		010D99E324619CA400DF85B3 /* CreateQRView */ = {
+			isa = PBXGroup;
+			children = (
+				010ECABA243602100003F329 /* CreateQRCodeView.swift */,
+			);
+			path = CreateQRView;
+			sourceTree = "<group>";
+		};
 		0163EDFD242D091700699A54 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,9 +159,11 @@
 				0163EDFE242D094700699A54 /* Managers */,
 				01C8B9172423AF3600C1504E /* AppDelegate.swift */,
 				01C8B9192423AF3600C1504E /* SceneDelegate.swift */,
-				01C8B91B2423AF3600C1504E /* ContentView.swift */,
-				010ECABA243602100003F329 /* CreateQRCodeView.swift */,
-				013BF195242A4DF5001E0C83 /* QRContentView.swift */,
+				010D99E124619C7D00DF85B3 /* MainView */,
+				010D99E224619C8B00DF85B3 /* DetailView */,
+				010D99E324619CA400DF85B3 /* CreateQRView */,
+				010D99E824619D6E00DF85B3 /* Localizable.strings */,
+				010D99EF2461A02500DF85B3 /* InfoPlist.strings */,
 				01C8B91D2423AF3700C1504E /* Assets.xcassets */,
 				01C8B9222423AF3700C1504E /* LaunchScreen.storyboard */,
 				01655954242F09C600AF57ED /* CoreDataQR.xcdatamodeld */,
@@ -255,6 +288,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = 01C8B90B2423AF3500C1504E;
 			packageReferences = (
@@ -277,8 +311,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				01C8B9242423AF3700C1504E /* LaunchScreen.storyboard in Resources */,
+				010D99E624619D6E00DF85B3 /* Localizable.strings in Resources */,
 				01C8B9212423AF3700C1504E /* Preview Assets.xcassets in Resources */,
 				01C8B91E2423AF3700C1504E /* Assets.xcassets in Resources */,
+				010D99ED2461A02500DF85B3 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,10 +381,29 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		010D99E824619D6E00DF85B3 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				010D99E724619D6E00DF85B3 /* en */,
+				010D99EA24619DC000DF85B3 /* ko */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		010D99EF2461A02500DF85B3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				010D99EE2461A02500DF85B3 /* en */,
+				010D99F02461A02900DF85B3 /* ko */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		01C8B9222423AF3700C1504E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				01C8B9232423AF3700C1504E /* Base */,
+				010D99E924619DC000DF85B3 /* ko */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -360,6 +415,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -420,6 +476,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

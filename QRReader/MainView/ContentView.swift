@@ -114,11 +114,17 @@ struct ContentView: View {
 }
 
 extension ContentView {
+    /// 날짜 표현 형식
     enum CustomDateFormat: String {
         case mainList = "d MMM y"
         case detailView = "HH:mm E, d MMM y"
     }
     
+    /// 입력된 날짜를 원하는 표현 형식의 String값으로 전환
+    /// - Parameters:
+    ///   - date: 날짜
+    ///   - format: main형식: d MMM y, detail형식: HH:mm E, d MMM y
+    /// - Returns: 날짜의 String값
     func converDateToString(_ date: Date, _ format: CustomDateFormat) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = format.rawValue

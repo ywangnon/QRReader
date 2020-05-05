@@ -111,7 +111,6 @@ struct SafariView: UIViewControllerRepresentable {
     let url: URL
 
     func makeUIViewController(context: UIViewControllerRepresentableContext<SafariView>) -> SFSafariViewController {
-
         if !(["http", "https"].contains(url.scheme?.lowercased())) {
             let appendedLink = "http://\(url)"
 
