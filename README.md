@@ -1,5 +1,7 @@
 <h1 align="center">큐알 리더기!!!</h1>
 
+![title](https://img.shields.io/badge/iOS-13.0-orange)
+
 [![큐알판독기!!!](https://devimages-cdn.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store-kr.svg)](https://apps.apple.com/us/app/큐알-판독기/id1505772234?l=ko&ls=1)
 
 
